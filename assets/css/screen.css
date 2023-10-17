@@ -1,9 +1,10 @@
 :root {
-    --apzg: #71d1a1;
+    --whte: #eee;
+    --abzg: #71d1a1;
     --blue: #53acff;
     --purp: #9489ff;
     --yelo: #ffd900;
-  }
+}
 
 body {
     margin: 0;
@@ -16,6 +17,16 @@ body {
     background: linear-gradient(90deg, rgba(35,36,36,1) 0%, rgba(31,31,31,1) 100%);
     font-family: cursor, monospace;
     overflow-x: hidden;
+}
+
+.color-base{
+    color: var(--whte);
+}
+.color-user{
+    color: var(--abzg);
+}
+.color-tilde{
+    color: var(--blue);
 }
 
 #grain {
