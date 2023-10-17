@@ -1,0 +1,44 @@
+:root {
+    --apzg: #71d1a1;
+    --blue: #53acff;
+    --purp: #9489ff;
+    --yelo: #ffd900;
+  }
+
+body {
+    margin: 0;
+    padding: 1.5% 2%;
+    min-height: 99%;
+    width: 100%;
+    min-width: 550px;
+    color: #eeeeee;
+    background: rgb(35,36,36);
+    background: linear-gradient(90deg, rgba(35,36,36,1) 0%, rgba(31,31,31,1) 100%);
+    font-family: cursor, monospace;
+    overflow-x: hidden;
+}
+
+#grain {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/grain.png");
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.2;
+    z-index: -100;
+}
+
+#terminal-input {
+    font-family: cursor, monospace;
+    background: none;
+    border: none;
+    color: white;
+}
+#terminal-input:focus {
+    background: none;
+    border: none;
+}
