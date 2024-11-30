@@ -1,5 +1,6 @@
 :root {
     --whte: #eee;
+    --soft: #afafaf;
     --abzg: #71d1a1;
     --blue: #53acff;
     --purp: #9489ff;
@@ -29,6 +30,9 @@ p {
 
 .color-base{
     color: var(--whte);
+}
+.color-soft{
+    color: var(--soft);
 }
 .color-abzg{
     color: var(--abzg);
@@ -71,4 +75,10 @@ p {
 #terminal-input:focus {
     background: none;
     border: none;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 13px;
+    }
 }
