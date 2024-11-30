@@ -34,7 +34,13 @@ const banner = [
 ];
 
 const linkedin = [
-    "<a href=\"https://be.linkedin.com/in/stijn-tassenoy-44b8a2196\" target=\"_blank\" rel=\"noopener noreferrer\">https://be.linkedin.com/in/stijn-tassenoy-44b8a2196</span>"
+    "<a href=\"https://be.linkedin.com/in/stijn-tassenoy-44b8a2196\" target=\"_blank\" rel=\"noopener noreferrer\">https://be.linkedin.com/in/stijn-tassenoy-44b8a2196</span>",
+    "<br>"
+];
+
+const github = [
+    "<a href=\"https://github.com/StijnTassenoy\" target=\"_blank\" rel=\"noopener noreferrer\">https://github.com/StijnTassenoy</span>",
+    "<br>"
 ];
 
 const education = [
@@ -84,5 +90,4 @@ const softskills = [
     "<p>>_ Eager to learn</p>",
     "<p>>_ ...</p>",
     "<br>"
-
 ];

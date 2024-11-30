@@ -86,6 +86,9 @@ inputField.addEventListener("keydown", function(event) {
             case "linkedin":
                 displayLines(linkedin);
                 break;
+            case "github":
+                displayLines(github);
+                break;
             case "education":
                 displayLines(education);
                 break;
