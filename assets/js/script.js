@@ -11,6 +11,16 @@ window.onload = function() {
 };
 
 
+// Focus inputbox on click except when text is selected
+document.addEventListener("click", function (event) {
+    const selection = window.getSelection();
+    if (selection && selection.type === "Range") {
+        return; // Do nothing if the user is selecting text
+    }
+
+    inputField.focus(); // Focus the input field
+});
+
 function displayLines(lines, index = 0) {
     if (index < lines.length) {
         const outputLine = document.createElement("div");
@@ -32,20 +42,30 @@ function displayLines(lines, index = 0) {
 
 inputField.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-        const command = inputField.value;
-        
-        // Add the command to command history
-        commandHistory.push(command);
-        historyIndex = commandHistory.length - 1;
+        const command = inputField.value.trim(); // Remove leading/trailing spaces
 
-        // Create a new output line and append it to the body
+        // Create a new output line and append it to the terminal body
         const outputLine = document.createElement("div");
         outputLine.className = "output-line";
-        outputLine.innerHTML = `<span>guest@stijntassenoy.be:~$ </span>${command}`;
+        outputLine.innerHTML = `<span>guest@stijntassenoy.be:~ $ </span>${command}`;
         terminalBody.appendChild(outputLine);
 
-        // Handle different commands here
+        // Handle the command
+        if (command !== "") {
+            // Save to history only if it's not a duplicate of the last entry
+            if (command !== commandHistory[commandHistory.length - 1]) {
+                commandHistory.push(command);
+            }
+
+            // Reset history index to the end of the history
+            historyIndex = commandHistory.length;
+        }
+
+        // Execute command logic
         switch (command.toLowerCase()) {
+            case "":
+                // Do nothing for blank input
+                break;
             case "help":
                 displayLines(help);
                 break;
@@ -58,27 +78,27 @@ inputField.addEventListener("keydown", function(event) {
             default:
                 const defaultResponse = document.createElement("div");
                 defaultResponse.className = "output-line";
-                defaultResponse.textContent = "Command not recognized. Type 'help' to see a list of available commands.";
+                defaultResponse.textContent =
+                    "Command not recognized. Type 'help' to see a list of available commands.";
                 terminalBody.appendChild(defaultResponse);
         }
 
         // Clear the input field
         inputField.value = "";
-
     } else if (event.key === "ArrowUp") {
-        // Handle history navigation (pressing the up arrow key)
-        if (historyIndex >= 0) {
-            inputField.value = commandHistory[historyIndex];
+        // Navigate history (pressing the up arrow key)
+        if (historyIndex > 0) {
             historyIndex--;
+            inputField.value = commandHistory[historyIndex];
         }
     } else if (event.key === "ArrowDown") {
-        // Handle history navigation (pressing the down arrow key)
+        // Navigate history (pressing the down arrow key)
         if (historyIndex < commandHistory.length - 1) {
             historyIndex++;
             inputField.value = commandHistory[historyIndex];
         } else {
-            // Clear the input field when reaching the most recent command in history
-            inputField.value = "";
+            inputField.value = ""; // Clear input if at the end of history
         }
     }
 });
+

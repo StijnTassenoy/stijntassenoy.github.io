@@ -45,10 +45,14 @@ body {
 
 #terminal-input {
     font-family: cursor, monospace;
-    background: none;
+    background: transparent;
     border: none;
+    outline: none;
     color: white;
+    font-size: 100%;
+    caret-color: var(--blue);
 }
+
 #terminal-input:focus {
     background: none;
     border: none;

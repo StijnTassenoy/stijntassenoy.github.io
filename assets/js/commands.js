@@ -19,7 +19,7 @@ const whois = [
 
 const banner = [
     "<span>Stijn Tassenoy</span>",
-    "<span>Copyright (C) 2023. stash, version 1.0.13.</span>",
+    "<span>Copyright (C) 2024. stash, version 1.0.13.</span>",
     "<br>",
     "    O       /`·.¸           O   0  o ",
     " o         /¸...¸`:·         O. o",
