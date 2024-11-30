@@ -26,19 +26,24 @@ function displayLines(lines, index = 0) {
         const outputLine = document.createElement("div");
         outputLine.className = "output-line";
 
-        // Replace spaces with non-breaking space entities
-        const formattedLine = lines[index].replace(/ /g, "&nbsp;");
+        // Check if the line is ASCII art or preformatted content
+        if (lines[index].includes("O /`·")) {
+            outputLine.style.whiteSpace = "pre"; // Preserve spaces and line breaks
+        }
 
-        outputLine.innerHTML = formattedLine;
+        // Use innerHTML to allow HTML rendering where needed
+        outputLine.innerHTML = lines[index];
+
         terminalBody.appendChild(outputLine);
         terminalBody.scrollTop = terminalBody.scrollHeight; // Scroll to the bottom
 
         setTimeout(() => {
             displayLines(lines, index + 1);
         }, 25); // milliseconds delay between lines
-        window.scrollTo(0, document.body.offsetHeight);
     }
 }
+
+
 
 inputField.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
@@ -47,7 +52,7 @@ inputField.addEventListener("keydown", function(event) {
         // Create a new output line and append it to the terminal body
         const outputLine = document.createElement("div");
         outputLine.className = "output-line";
-        outputLine.innerHTML = `<span>guest@stijntassenoy.be:~ $ </span>${command}`;
+        outputLine.innerHTML = `<span>guest@stijntassenoy.be:~$ </span>${command}`;
         terminalBody.appendChild(outputLine);
 
         // Handle the command
@@ -66,6 +71,9 @@ inputField.addEventListener("keydown", function(event) {
             case "":
                 // Do nothing for blank input
                 break;
+            case "clear":
+                terminalBody.innerHTML = "";
+                break;
             case "help":
                 displayLines(help);
                 break;
@@ -74,6 +82,18 @@ inputField.addEventListener("keydown", function(event) {
                 break;
             case "banner":
                 displayLines(banner);
+                break;
+            case "linkedin":
+                displayLines(linkedin);
+                break;
+            case "education":
+                displayLines(education);
+                break;
+            case "experience":
+                displayLines(experience);
+                break;
+            case "softskills":
+                displayLines(softskills);
                 break;
             default:
                 const defaultResponse = document.createElement("div");

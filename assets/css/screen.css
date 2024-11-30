@@ -19,14 +19,29 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    color: var(--blue);
+}
+
+p {
+    margin: auto;
+}
+
 .color-base{
     color: var(--whte);
 }
-.color-user{
+.color-abzg{
     color: var(--abzg);
 }
-.color-tilde{
+.color-blue{
     color: var(--blue);
+}
+.color-purple{
+    color: var(--purp);
+}
+
+.output-line {
+    white-space: pre; /* Preserve spaces and line breaks */
 }
 
 #grain {

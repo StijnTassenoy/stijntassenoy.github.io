@@ -7,14 +7,15 @@ const help = [
     "experience     A list of Stijn's working experiences.",
     "linkedin       View LinkedIn profile.",
     "clear          Clears the screen.",
-
+    "<br>"
 ];
 
 const whois = [
     "Stijn is an enthousiast computer scientist with a passion for cybersecurity and artificial intelligence.",
     "From a young age he has been interested in computers,",
     "how they work and how to use them to their full potential.",
-    "He loves to get to know the latest technologies."
+    "He loves to get to know the latest technologies.",
+    "<br>"
 ];
 
 const banner = [
@@ -55,6 +56,7 @@ const education = [
     "<p>              ┃  <span class=\"color-base-faded\">Math / Statistical Math, Science,</span></p>",
     "<p>              ┃  <span class=\"color-base-faded\">Dutch, English, French, ...</span></p>",
     "<p>              ┃  </p>",
+    "<br>"
 ];
 
 const experience = [
@@ -69,6 +71,7 @@ const experience = [
     "<p>☆ Internship CompuTrade:  <span class=\"color-base-faded\">Computer Hardware - Network Solutions</span></p>",
     "<p>☆ Festival Crew:  <span class=\"color-base-faded\">Vacation job</span></p>",
     "<p>☆ Sales Clerk: <span class=\"color-base-faded\">Vacation job</span></p>",
+    "<br>"
 ];
 
 const softskills = [
@@ -80,5 +83,6 @@ const softskills = [
     "<p>>_ Positive mindset</p>",
     "<p>>_ Eager to learn</p>",
     "<p>>_ ...</p>",
+    "<br>"
 
 ];
